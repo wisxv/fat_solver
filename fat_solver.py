@@ -20,7 +20,7 @@ from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
 
 
-def custom_sleep(degree=0):
+def custom_sleep(degree=1):
     time_ = 0.1
     if degree == 1:
         time_ = round(uniform(2.01, 5.01), 2)
@@ -60,7 +60,7 @@ class Browser:
                         break
                 if not self.logged_in:
                     self.browser.refresh()
-                    custom_sleep(1)
+                    custom_sleep()
                     self.log_in()
 
         self.textarea = self.browser.find_element(By.XPATH, '//*[@id="exampleFormControlTextarea1"]')  # 1
@@ -454,7 +454,7 @@ def main():
             inp = input('Close Firefox (y/N): ')
         browser.finish()
     elif image.file_system == 'ntfs':
-        main(argv)
+        main()
     browser.finish()
 
 

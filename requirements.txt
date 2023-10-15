@@ -1,0 +1,5 @@
+webdriver-manager
+rich
+bs4
+lxml
+selenium
